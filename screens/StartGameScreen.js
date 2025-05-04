@@ -14,7 +14,7 @@ function StartGameScreen() {
                 [{text: "Okay", style: "destructive", onPress: resetInputHandler}]);
             return;
         }
-        console.log("valid num");
+        console.log("valid numm");
     }
 
     function resetInputHandler() {
