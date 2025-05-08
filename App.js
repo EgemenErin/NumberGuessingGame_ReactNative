@@ -1,18 +1,35 @@
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import StartGameScreen from "./screens/StartGameScreen";
 import { LinearGradient } from 'expo-linear-gradient';
+import { useState } from 'react';
+import GameScreen from './screens/GameScreen';
 
 export default function App() {
+  const [userNumber, setUserNumber] = useState(null);
+
+  function pickedNumberHandler(pickedNumber) {
+    setUserNumber(pickedNumber);
+  }
+
+  let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
+
+  if (userNumber) {
+    screen = <GameScreen />;
+  }
+  
   return (
       <LinearGradient colors={['#441752', "#F29F58"]} style={styles.container}>
-          <ImageBackground
-              source={require('./assets/images/background.jpg')}
-              resizeMode="cover"
-              style={styles.container}
-              imageStyle={styles.backgroundImage}
-          > <StartGameScreen></StartGameScreen>
-          </ImageBackground>/
-          <Text style={styles.textStyle}>{"i love gambling"}</Text>
+        <ImageBackground
+            source={require('./assets/images/background.jpg')}
+            resizeMode="cover"
+            style={styles.container}
+            imageStyle={styles.backgroundImage}
+        >
+          <SafeAreaView style={styles.container}>
+            {screen}
+          </SafeAreaView>
+          <Text style={styles.textStyle}>i love gambling</Text>
+        </ImageBackground>
       </LinearGradient>
   );
 }

@@ -1,0 +1,52 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Expo
+.expo/
+dist/
+*.jks
+*.p12
+*.key
+*.mobileprovision
+
+# Android
+android/app/build/
+android/build/
+android/.gradle/
+android/app/src/main/assets/app.manifest
+android/app/debug/
+android/app/release/
+android/app/*.apk
+android/app/*.aab
+
+# iOS
+ios/build/
+ios/Pods/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserdatad/
+*.ipa
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDE specific
+.idea/
+*.iml
+*.vs/
+*.vscode/
+
+# Other
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+*.patch
+*.tgz 
